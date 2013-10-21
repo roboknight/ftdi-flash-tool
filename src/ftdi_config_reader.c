@@ -253,12 +253,13 @@ generate_configuration(const char* filename,const char* cfg_file) {
  **/
 void
 usage(char *program) {
-	printf("%s <input FTDI xml configuration> <output configuration file>\n", program);
+	printf("\n%s <input FTDI xml configuration> <output configuration file>\n\n", program);
 	printf("NOTE: Output configuration file is also compatible with ftdi_eeprom.\n");
 	printf("      When using this tool with ftdi_eeprom, please change your eeprom_type.\n");
 	printf("      This will avoid any potential \"bricking\" issues with ftdi_eeprom.\n");
-	printf("			ftdi-flash-tool hopefully avoids the issue by detecting the necessary info\n");
+	printf("      ftdi-flash-tool hopefully avoids the issue by detecting the necessary info\n");
 	printf("      if it isn't provided.\n");
+	exit(1);
 }
 
 /**
@@ -276,7 +277,7 @@ int main(int argc, char **argv) {
     printf ("(c) Brandon Warhurst\n");
 
 	if (argc < 2)
-		return(1);
+		usage(argv[0]);
 
 	xmlInitParser();
 	
