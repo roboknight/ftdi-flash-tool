@@ -363,7 +363,7 @@ int main(int argc, char *argv[])
 
     struct ftdi_context *ftdi = NULL;
 
-		printf ("\nftdi-flash-tool v%s\n", EEPROM_VERSION_STRING);
+		printf ("\nftdi-flash-tool %s\n", EEPROM_VERSION_STRING);
     printf ("\nAn FTDI eeprom generator\n");
     printf ("(c) Brandon Warhurst\n");
 

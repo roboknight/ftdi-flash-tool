@@ -272,7 +272,7 @@ usage(char *program) {
  **/
 int main(int argc, char **argv) {
 
-		printf ("\nftdi-xform-config v%s\n", EEPROM_VERSION_STRING);
+		printf ("\nftdi-xform-config %s\n", EEPROM_VERSION_STRING);
     printf ("\nAn FTDI eeprom configuration conversion tool\n");
     printf ("(c) Brandon Warhurst\n");
 

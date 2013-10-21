@@ -1,5 +1,5 @@
 if ( CONFUSE_FOUND AND LibXML2_FOUND AND LIBUSB_FOUND AND LIBFTDI_FOUND )
-  message(STATUS "Configuring ftdi-flash-tool")
+  message(STATUS "Configuring ftdi-flash-tool *${VERSION_STRING}*")
 
   #include_directories ( ${CONFUSE_INCLUDE_DIRS} )
   #include_directories ( ${LIBFTDI_INCLUDE_DIRS} )

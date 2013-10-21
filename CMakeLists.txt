@@ -1,10 +1,6 @@
 # Project
 project(ftdi-flash-tool)
-set(MAJOR_VERSION 0)
-set(MINOR_VERSION 1)
 set(PACKAGE ftdi-flash-tool)
-set(VERSION_STRING ${MAJOR_VERSION}.${MINOR_VERSION})
-set(VERSION ${VERSION_STRING})
 set ( CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake )
 
 # CMake
@@ -38,8 +34,13 @@ include_directories ( ${LibXML2_INCLUDE_DIR} )
 find_package ( LibFTDI1 REQUIRED )
 include_directories ( ${LIBFTDI_INCLUDE_DIR} )
 
-# Set components
+# Set current version
+execute_process( COMMAND git describe --tags HEAD
+								 OUTPUT_VARIABLE VER_STRING 
+								 OUTPUT_STRIP_TRAILING_WHITESPACE )
+set(VERSION_STRING ${VER_STRING})
 
+# Set components
 add_subdirectory(src)
 
 # Documentation
